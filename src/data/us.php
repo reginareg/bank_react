@@ -9,3 +9,4 @@ $users = [
     ['id' => 6, 'name' => 'briedis', 'psw' => md5('123'), 'full_name' => 'Girios Raguotas'],
 ];
 file_put_contents(__DIR__ . '/users.json', json_encode($users));
+
