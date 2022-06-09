@@ -40,7 +40,7 @@ class App {
 
         if ('GET' == $M && count($uri) == 1 && $uri [0] === 'create') {
             return (new HomeController()) -> create ();
-
+        }
         if ('POST' == $M && count($uri) == 1 && $uri [0] === 'create') {
             return (new HomeController()) -> docreate ();
         }
