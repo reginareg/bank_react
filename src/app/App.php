@@ -5,8 +5,11 @@
 
 class App {
 
-    public static function start () {
+    const DOMAIN = 'girios-bankas.lt';
 
+    public static function start () {
+        session_start();
+        Messages::init();
         $uri = explode('/', $_SERVER['REQUEST_URI']);
         array_shift($uri);
         self::route($uri);
@@ -23,39 +26,43 @@ class App {
         return require __DIR__ .' /../views/'.$name.'.php';
     }
 
+    public static function redirect ($url = '') {
+        header('Location: http://'.self::DOMAIN.'/'.$url);
+    }
+
     private static function route (array $uri){
 
-        $m = $_SERVER['$REQUEST_METHOD'];
+        $m = $_SERVER['REQUEST_METHOD'];
 
         if (count($uri) == 1 && $uri [0] === '') {
            return (new HomeController()) -> index ();
         }
            
-        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'list') {
+        if ('GET' == $m && count($uri) == 1 && $uri [0] === 'list') {
             return (new HomeController()) -> list ();
         }
-        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'list') {
+        if ('POST' == $m && count($uri) == 1 && $uri [0] === 'list') {
             return (new HomeController()) -> dolist ();
         }
 
-        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'create') {
+        if ('GET' == $m && count($uri) == 1 && $uri [0] === 'create') {
             return (new HomeController()) -> create ();
         }
-        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'create') {
+        if ('POST' == $m && count($uri) == 1 && $uri [0] === 'create') {
             return (new HomeController()) -> docreate ();
         }
 
-        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'add') {
+        if ('GET' == $m && count($uri) == 1 && $uri [0] === 'add') {
             return (new HomeController()) -> add ();
         }
-        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'add') {
+        if ('POST' == $m && count($uri) == 1 && $uri [0] === 'add') {
             return (new HomeController()) -> doadd ();
         }
 
-        if ('GET' == $M &&count($uri) == 1 && $uri [0] === 'deduct') {
+        if ('GET' == $m &&count($uri) == 1 && $uri [0] === 'deduct') {
             return (new HomeController()) -> deduct ();
         }
-        if ('POST' == $M &&count($uri) == 1 && $uri [0] === 'deduct') {
+        if ('POST' == $m &&count($uri) == 1 && $uri [0] === 'deduct') {
             return (new HomeController()) -> dodeduct ();
         }
 
@@ -63,5 +70,5 @@ class App {
         // } else {
         //     echo 'kitka';
         // }
-
+        }
     }
