@@ -1,0 +1,18 @@
+{
+    "name": "hp/bank_react",
+    "description": "Girios bankas",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bankas\\": "src/app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Regina Sadeckienė",
+            "email": "101136701+reginareg@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
