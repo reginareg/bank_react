@@ -8,21 +8,21 @@ class HomeController {
         return App::view('home', ['title' => 'Girios bankas'] );
     }
     
-    public function psl2 () {
-        return App::view ('psl2');
+    public function list () {
+        return App::view ('list');
     } 
-    public function psl3 () {
-        return App::view ('psl3');
+    public function create () {
+        return App::view ('create');
     } 
-    public function psl4 () {
-        return App::view ('psl4');
+    public function add () {
+        return App::view ('add');
     } 
-    public function psl5 () {
-        return App::view ('psl5');
+    public function deduct () {
+        return App::view ('deduct');
     } 
-
-
-
-
 
 }
+
+    public function list () {
+        return App::view (list);
+    }

@@ -31,32 +31,32 @@ class App {
            return (new HomeController()) -> index ();
         }
            
-        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'psl2') {
-            return (new HomeController()) -> psl2 ();
+        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'list') {
+            return (new HomeController()) -> list ();
         }
-        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'psl2') {
-            return (new HomeController()) -> dopsl2 ();
-        }
-
-        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'psl3') {
-            return (new HomeController()) -> psl3 ();
-
-        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'psl3') {
-            return (new HomeController()) -> dopsl3 ();
+        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'list') {
+            return (new HomeController()) -> dolist ();
         }
 
-        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'psl4') {
-            return (new HomeController()) -> psl4 ();
-        }
-        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'psl4') {
-            return (new HomeController()) -> dopsl4 ();
+        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'create') {
+            return (new HomeController()) -> create ();
+
+        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'create') {
+            return (new HomeController()) -> docreate ();
         }
 
-        if ('GET' == $M &&count($uri) == 1 && $uri [0] === 'psl5') {
-            return (new HomeController()) -> psl5 ();
+        if ('GET' == $M && count($uri) == 1 && $uri [0] === 'add') {
+            return (new HomeController()) -> add ();
         }
-        if ('POST' == $M &&count($uri) == 1 && $uri [0] === 'psl5') {
-            return (new HomeController()) -> dopsl5 ();
+        if ('POST' == $M && count($uri) == 1 && $uri [0] === 'add') {
+            return (new HomeController()) -> doadd ();
+        }
+
+        if ('GET' == $M &&count($uri) == 1 && $uri [0] === 'deduct') {
+            return (new HomeController()) -> deduct ();
+        }
+        if ('POST' == $M &&count($uri) == 1 && $uri [0] === 'deduct') {
+            return (new HomeController()) -> dodeduct ();
         }
 
 
