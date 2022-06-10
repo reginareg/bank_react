@@ -97,9 +97,5 @@ class App {
             return (new HomeController()) -> dodeduct ();
         }
 
-
-        // } else {
-        //     echo 'kitka';
-        // }
         }
     }
