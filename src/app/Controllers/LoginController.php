@@ -5,6 +5,14 @@ use Bankas\Messages as M;
 
 class LoginController {
 
+    public $data;
+
+    public function showUs()
+    {
+        $this->data = json_decode(file_get_contents(__DIR__.'/../../data/worker.json'), 1);
+        return $this->data;
+    }
+
     public function showLogin() {
         return App::view('login', ['messages' => M::get()]);
     }
@@ -30,7 +38,12 @@ class LoginController {
 
     public function doLogout() {
         App::authRem();
-        M::add('Ate', 'success');
+        M::add('Iki susitikimo!', 'success');
         return App::redirect('login');
+    }
+
+    public static function isLogged() : bool
+    {
+        return isset($_SESSION['login']) && $_SESSION['login'] == 1;
     }
 }

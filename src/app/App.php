@@ -16,11 +16,6 @@ class App {
         array_shift($uri);
         self::route($uri);
 
-        print_r($_SERVER['REQUEST_URI']);
-
-        print_r($uri);
-
-        // echo 'valio';
     }
 
     public static function view (string $name, array $data = []) {
